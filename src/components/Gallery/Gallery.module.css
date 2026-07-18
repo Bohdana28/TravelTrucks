@@ -1,0 +1,40 @@
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+
+.mainImage {
+    border-radius: 17px;
+    width: 638px;
+    height: 505px;
+    object-fit: cover;
+}
+
+.thumbnailList {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.thumbnail {
+    border-radius: 16px;
+    width: 135px;
+    height: 144px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: border-color var( --transition-duration);
+}
+
+
+.thumbnail:hover {
+  transform: scale(1.05);
+}
+.active {
+  border-color: var(--green-hover);
+}
+

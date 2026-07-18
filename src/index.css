@@ -70,3 +70,12 @@ img {
     margin: 0 auto;
     padding: 0 64px;
 }
+
+.loadingOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
