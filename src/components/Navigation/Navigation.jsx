@@ -23,6 +23,14 @@ export default function Navigation() {
                 </NavLink>
                 
             </li>
+            <li className={css.item}>
+                <NavLink
+                    to="/favorites"
+                    className={({ isActive }) =>
+                `${css.link} ${isActive ? css.active : ""}`
+                }  
+                >Favorites</NavLink>
+            </li>
    
             
             

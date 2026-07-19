@@ -25,7 +25,7 @@ export default function CamperPage() {
     }, [dispatch, id]);
 
     if (isLoading) return <Loader />;
-    if (isError) return <Error />;
+    if (isError) return <Error onRetry={() => window.location.reload()} />;
     if (!currentCamper) return <p>Not Found</p>;
 
     return (

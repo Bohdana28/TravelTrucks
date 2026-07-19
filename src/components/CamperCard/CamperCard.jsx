@@ -1,8 +1,26 @@
+import { useDispatch, useSelector } from 'react-redux'
 import css from './CamperCard.module.css'
 import { Link } from 'react-router-dom'
+import { selectFavorites } from '../../redux/favorites/selectors';
+import { FiHeart } from "react-icons/fi";
+import { FaHeart } from "react-icons/fa";
+import { toggleFavorite } from '../../redux/favorites/slice';
+
 
 
 export default function CamperCard({ camper }) {
+    const dispatch = useDispatch();
+
+    const favorites = useSelector(selectFavorites);
+
+    const isFavorite = favorites.some(
+        item => item.id ===camper.id
+    )
+
+
+
+
+
     return (
         <div className={css.card}>
             <img
@@ -15,7 +33,14 @@ export default function CamperCard({ camper }) {
             <div className={css.content}>
                 <div className={css.namePrice}>
                     <h2>{camper.name}</h2>
-                    <p>€{camper.price}</p>
+                    <div className={css.priceWrapper}>
+                        <p>€{camper.price}</p>
+                        <button
+                        className={css.heartBtn}
+                        onClick={() => dispatch(toggleFavorite(camper))}
+                        >{isFavorite ? <FaHeart/> : <FiHeart/>}</button>
+                    </div>
+                    
                 </div> 
 
                 <div>

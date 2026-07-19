@@ -53,7 +53,7 @@ export default function CatalogPage() {
     return (
         <section className={css.catalogSection}>
             {isOverlayLoading && <CatalogOverlay />}
-            {isError && <Error/>}
+            {isError && <Error onRetry={() => window.location.reload()}/>}
             <Filters
                 ref={filtersRef}
             onSearch={(newFilters) => {
