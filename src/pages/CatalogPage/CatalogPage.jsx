@@ -73,7 +73,7 @@ export default function CatalogPage() {
                     )}
 
                     {campers.length > 0 && (
-                        <>
+                        <div className={css.catalogLoad}>
                         <CamperList campers={campers} />
 
                         {hasMore && (
@@ -81,7 +81,7 @@ export default function CatalogPage() {
                             onClick={() => setPage(prev => prev + 1)}
                             />
                         )}
-                        </>
+                        </div>
                     )}
             </div>
 
