@@ -1,0 +1,58 @@
+.hero {
+  background-image: image-set(
+    url("../../assets/img/hero/herodesktop.jpg") 1x,
+    url("../../assets/img/hero/herodeskto@2x.jpg") 2x
+  );
+  min-height: 864px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.homePage {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 40px;
+    width: 571px;
+    padding-top: 197px;
+}
+.taxtAndtitle{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.mainTitle {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 0.67;
+    color: var(--inputs);
+}
+.text {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.33333;
+    color: var(--inputs);
+}
+
+.viewbtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+    border-radius: 200px;
+    padding: 16px 48px;
+    width: 173px;
+    height: 56px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--white);
+    background: var(--grey-green);
+    transition: background-color var(--transition-duration);
+}
+.viewbtn:hover,
+.viewbtn:focus {
+    background-color: var(--green-hover);
+}
