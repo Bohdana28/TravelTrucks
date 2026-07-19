@@ -1,7 +1,7 @@
 .card {
     display: flex;
-    padding: 24px;
-    gap:24px;
+    gap: 24px;
+   
 }
 
 .cardImg {
@@ -12,18 +12,78 @@
 }
 
 .content {
-  flex: 1;
-  gap:24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 
 }
 
-.namePrice {
+.headerRow {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 8px;
 }
 
+.title{
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  margin: 0;
+}
+.priceWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.price {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+}
+
+.heartBtn {
+  background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.heartIconFilled {
+    width: 24px;
+    height: 24px;
+    color: var(--button);
+    transition: color 0.2s ease;
+}
+.heartIconfull {
+  width: 24px;
+  height: 24px;
+  color: var(--main);
+}
+.metaRow {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.ratingText, .locationText {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+
 .description {
+  font-weight: 400;  
+  color: var(--text);
+  margin-bottom: 24px;
+
   display: -webkit-box;
   -webkit-line-clamp: 1; 
   -webkit-box-orient: vertical;
@@ -31,13 +91,53 @@
 
 }
 
-.heartBtn {
-  border: none;
-  background: transparent;
-  cursor: pointer;
+.categoriesList {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px 0;
+}
+
+.categoryItem {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 8px;
+    border-radius: 100px;
+    padding: 12px 18px;
+    min-width: 109px;
+    height: 48px;
+    background: var(--badges);
+    mix-blend-mode: multiply;
+    font-weight: 500;
+    text-align: center;
+}
+
+.button {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
-  font-size: 20px;
+  flex-direction: row;
+  gap: 10px;
+  border-radius: 200px;
+  padding: 16px 43px;
+  width: 173px;
+  height: 56px;
+  background: var(--grey-green);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  transition: background var(--transition-duration);
+}
+.button:hover,
+.button:focus {
+  background: var(--green-hover);
 }

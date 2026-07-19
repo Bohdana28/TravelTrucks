@@ -12,15 +12,19 @@ export default function NoCampers({ onClearFilters }) {
         srcSet={`${noCampersDesktop2x} 2x`}
         alt="No campers found"
         className={css.image}
-        />
+      />
+      <div className={css.textWrapper}>
+        <h2 className={css.title}>No campers found</h2>
 
-      <h2 className={css.title}>No campers found</h2>
+        <p className={css.text}>
+          We couldn't find any campers that match your filters.
+          <br />
+          Try adjusting your search or clearing some filters.
+        </p>
 
-      <p className={css.text}>
-        We couldn't find any campers that match your filters.
-        <br />
-        Try adjusting your search or clearing some filters.
-          </p>
+      </div>
+
+      
 
         <div className={css.actions}>
         <button
@@ -28,7 +32,7 @@ export default function NoCampers({ onClearFilters }) {
           className={css.clearBtn}
           onClick={onClearFilters}
         >
-        <svg className={css.logosvg}>
+        <svg className={css.closesvg}>
             <use href={`${sprite}#icon-close`}
             width='24'
             height='24'/>

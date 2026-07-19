@@ -1,0 +1,96 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 24px;
+    border-radius: 16px;
+    padding: 24px;
+    width: 888px;
+    height: 840px;
+    background: var(--inputs);
+}
+
+.image {
+    width: 488px;
+    height: 463px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.textWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+    width: 840px;
+}
+.title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.33;
+    text-align: center;
+
+}
+.text {
+    font-weight: 500;
+    text-align: center;
+}
+.actions{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 16px;
+    }
+
+.clearBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 4px;
+    border: 1px solid var(--gray-light);
+    border-radius: 200px;
+    padding: 16px 32px;
+    width: 192px;
+    height: 56px;
+    background: var(--white);
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    text-align: center;
+
+}
+.closesvg {
+    stroke: var(--main);
+    width: 24px;
+    height: 24px;
+    stroke-width: 1.50px;
+}
+
+.viewBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+    border-radius: 200px;
+    padding: 16px 31px;
+    width: 192px;
+    height: 56px;
+    background: var(--grey-green);
+    font-weight: 500;
+    border: none;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: var(--white);
+    transition:  background var(--transition-duration);
+}
+.viewBtn:hover,
+.viewBtn:focus {
+    background: var(--green-hover);
+}

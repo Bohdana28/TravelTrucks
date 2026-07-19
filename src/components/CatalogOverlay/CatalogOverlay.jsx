@@ -1,15 +1,11 @@
-import { ClipLoader } from "react-spinners";
+
 import css from "./CatalogOverlay.module.css";
 
 export default function CatalogOverlay() {
   return (
     <div className={css.overlay}>
       <div className={css.card}>
-        <ClipLoader
-          size={48}
-          color="#475467"
-          speedMultiplier={0.9}
-        />
+        <div className={css.spinner}></div>
 
         <h2 className={css.title}>Loading trucks...</h2>
 
