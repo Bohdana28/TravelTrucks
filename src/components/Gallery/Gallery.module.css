@@ -27,14 +27,15 @@
     height: 144px;
     object-fit: cover;
     cursor: pointer;
-    transition: border-color var( --transition-duration);
+    outline: 4px solid transparent;
+    outline-offset: -4px; 
+    transition: transform var(--transition-duration), outline-color var(--transition-duration);
 }
-
 
 .thumbnail:hover {
   transform: scale(1.05);
 }
 .active {
-  border-color: var(--green-hover);
+  outline-color: var(--green-hover);
 }
 

@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import css from "./Gallery.module.css";
 
 export default function Gallery({ gallery, name }) {
+  
   const [activeImage, setActiveImage] = useState(gallery[0]);
+  if (!gallery?.length) return null;
 
   
-  useEffect(() => {
-    setActiveImage(gallery[0]);
-  }, [gallery]);
+
 
   return (
     <div className={css.gallery}>

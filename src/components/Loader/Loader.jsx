@@ -6,7 +6,7 @@ export default function Loader() {
     <div className={css.backdrop}>
       <ClipLoader
         size={60}
-        color="#E44848"
+        color="#6d7b75"
         speedMultiplier={0.9}
       />
     </div>

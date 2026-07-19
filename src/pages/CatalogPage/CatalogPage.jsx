@@ -46,15 +46,21 @@ export default function CatalogPage() {
     };
     
     if (isLoading && campers.length === 0 && !isOverlayLoading) {
-  return <Loader />;
-}
-    
+        return <Loader />;
+    }
+    if (isError) {
+        return (
+            <section className="container">
+            <Error onRetry={() => window.location.reload()} />
+            </section>
+        );
+
+    }
     
     return (
         <section className="container" >
             <div className={css.catalogSection} >
                 {isOverlayLoading && <CatalogOverlay />}
-                {isError && <Error onRetry={() => window.location.reload()}/>}
                 <Filters
                     ref={filtersRef}
                 onSearch={(newFilters) => {

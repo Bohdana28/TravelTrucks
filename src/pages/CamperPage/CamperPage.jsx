@@ -9,6 +9,7 @@ import Error from "../../components/Error/Error";
 import CamperDescription from "../../components/CamperDescription/CamperDescription";
 import Reviews from "../../components/Reviews/Reviews";
 import BookingForm from "../../components/BookingForm/BookingForm";
+import css from './CamperPage.module.css'
 
 
 export default function CamperPage() {
@@ -29,11 +30,24 @@ export default function CamperPage() {
     if (!currentCamper) return <p>Not Found</p>;
 
     return (
-        <section>
-            <Gallery gallery={currentCamper.gallery} name={currentCamper.name} /> 
-            <CamperDescription details={currentCamper} />
-            <Reviews reviews={currentCamper.reviews} />
-            <BookingForm />
+        <section className={css.camperPage}>
+            <div className="container">
+                <div className={css.pageWrapper}>
+                    <Gallery key={currentCamper.id} gallery={currentCamper.gallery} name={currentCamper.name} /> 
+                    <CamperDescription details={currentCamper} />
+                    <div className={css.wrapper}>
+                        <h2 className={css.title}>Reviews</h2>
+                        <div className={css.reviewPart}>
+                        <Reviews reviews={currentCamper.reviews} />
+                        <BookingForm />
+                        </div>
+
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
         </section>
     )
 

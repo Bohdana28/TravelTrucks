@@ -9,7 +9,6 @@ const bookingSchema = Yup.object({
     .min(2, "Name is too short")
     .matches(/^[A-Za-z\s]+$/, "Only letters are allowed")
     .required("Please enter your name."),
-
   email: Yup.string()
     .email("Invalid email address")
     .required("Please enter your email."),
@@ -23,7 +22,6 @@ const initialValues = {
 export default function BookingForm() {
   const handleSubmit = (values, actions) => {
     toast.success("Camper booked successfully!");
-
     actions.resetForm();
   };
 
@@ -35,14 +33,14 @@ export default function BookingForm() {
     >
       {({ errors, touched }) => (
         <Form className={css.form}>
-          <h2>Book your campervan now</h2>
+          <div className={css.headerWrapper}>
+            <h2 className={css.title}>Book your campervan now</h2>
+            <p className={css.text}>
+              Stay connected! We are always ready to help you.
+            </p>
+          </div>
 
-          <p className={css.text}>
-            Stay connected! We are always ready to help you.
-          </p>
-
-          {/* Name */}
-
+          {/* Name Field */}
           <div className={css.fieldWrapper}>
             <Field
               className={`${css.input} ${
@@ -52,22 +50,17 @@ export default function BookingForm() {
               name="name"
               placeholder="Name*"
             />
-
             {errors.name && touched.name && (
-              <svg className={css.errorIcon}>
-                <use href={`${sprite}#icon-error`} />
-              </svg>
+              <div className={css.iconContainer}>
+                <svg className={css.errorIcon} width="20" height="20">
+                  <use href={`${sprite}#icon-error`} />
+                </svg>
+              </div>
             )}
-
-            <ErrorMessage
-              className={css.error}
-              component="p"
-              name="name"
-            />
+            <ErrorMessage className={css.errorText} component="p" name="name" />
           </div>
 
-          {/* Email */}
-
+          {/* Email Field */}
           <div className={css.fieldWrapper}>
             <Field
               className={`${css.input} ${
@@ -77,18 +70,14 @@ export default function BookingForm() {
               name="email"
               placeholder="Email*"
             />
-
             {errors.email && touched.email && (
-              <svg className={css.errorIcon}>
-                <use href={`${sprite}#icon-error`} />
-              </svg>
+              <div className={css.iconContainer}>
+                <svg className={css.errorIcon} width="20" height="20">
+                  <use href={`${sprite}#icon-error`} />
+                </svg>
+              </div>
             )}
-
-            <ErrorMessage
-              className={css.error}
-              component="p"
-              name="email"
-            />
+            <ErrorMessage className={css.errorText} component="p" name="email" />
           </div>
 
           <button className={css.button} type="submit">

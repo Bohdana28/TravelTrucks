@@ -1,0 +1,50 @@
+.listDescr{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+    width: 650px;
+
+}
+.itemDescr {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    border-radius: 16px;
+    padding: 24px;
+    width: 650px;
+    background: var(--inputs);
+}
+.title{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.33333;
+    margin-bottom: 8px;
+
+}
+.price {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.33;
+    margin-bottom: 24px;
+}
+.metaRow {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.ratingText, .locationText {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.description {
+    font-weight: 400;
+    color: var(--text);
+}

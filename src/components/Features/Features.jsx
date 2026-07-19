@@ -1,18 +1,24 @@
-
+import css from './Features.module.css'
 
 
 
 export default function Features({ details }) {
+  const capitalize = (str) => {
+        if (typeof str !== 'string') return '';
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    };
+
+
     const features = [
   {
     id: "transmission",
-    label: details.transmission,
+    label: capitalize(details.transmission),
     value: details.transmission,
     
   },
   {
     id: "engine",
-    label: details.engine,
+    label: capitalize(details.engine),
     value: details.engine,
     
   },
@@ -73,47 +79,32 @@ export default function Features({ details }) {
     ].filter(item => item.value);
     
     const vehicleDetails = [
-    {
-        label: "Form",
-        value: details.form,
-    },
-    {
-        label: "Length",
-        value: details.length,
-    },
-    {
-        label: "Width",
-        value: details.width,
-    },
-    {
-        label: "Height",
-        value: details.height,
-    },
-    {
-        label: "Tank",
-        value: details.tank,
-    },
-    {
-        label: "Consumption",
-        value: details.consumption,
-    },
+        { label: "Form", value: capitalize(details.form) },
+        { label: "Length", value: details.length },
+        { label: "Width", value: details.width },
+        { label: "Height", value: details.height },
+        { label: "Tank", value: details.tank },
+        { label: "Consumption", value: details.consumption },
     ];
 
     return (
-        <div>
-            <h2>Vehicle details</h2>
-            <ul>
+        <div className={css.featuresWrapper}>
+            <h2 className={css.title}>Vehicle details</h2>
+            <ul className={css.listFeatures}>
                 {features.map(features => (
-                    <li key={features.id}>
-                        <p>{features.label}</p>
+                  <li key={features.id}
+                  className={css.itemFeatures}>
+                        <p className={css.lable}>{features.label}</p>
                     </li>
                 ))}
             </ul>
-            <ul>
+            
+            <ul className={css.listDetails}>
                 {vehicleDetails.map(item => (
-                    <li key={item.label}>
-                        <p>{item.label}</p>
-                        <p>{item.value}</p>
+                  <li key={item.label}
+                  className={css.itemDetails}>
+                        <p className={css.detailLabel}>{item.label}</p>
+                        <p className={css.detailValue}>{item.value}</p>
                     </li>
 
                 ))}
