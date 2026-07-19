@@ -51,38 +51,42 @@ export default function CatalogPage() {
     
     
     return (
-        <section className={css.catalogSection}>
-            {isOverlayLoading && <CatalogOverlay />}
-            {isError && <Error onRetry={() => window.location.reload()}/>}
-            <Filters
-                ref={filtersRef}
-            onSearch={(newFilters) => {
-                setPage(1);
-                dispatch(
-                fetchCampers({
-                    ...newFilters,
-                    page: 1,
-                })
-                );
-            }}
-            />
-            <div className={css.content}>
-                {!isLoading && !isError && campers.length === 0 && (
-                    <NoCampers onClearFilters={handleClearFilters}/>
-                )}
-
-                {campers.length > 0 && (
-                    <>
-                    <CamperList campers={campers} />
-
-                    {hasMore && (
-                        <LoadMoreButton
-                        onClick={() => setPage(prev => prev + 1)}
-                        />
+        <section className="container" >
+            <div className={css.catalogSection} >
+                {isOverlayLoading && <CatalogOverlay />}
+                {isError && <Error onRetry={() => window.location.reload()}/>}
+                <Filters
+                    ref={filtersRef}
+                onSearch={(newFilters) => {
+                    setPage(1);
+                    dispatch(
+                    fetchCampers({
+                        ...newFilters,
+                        page: 1,
+                    })
+                    );
+                }}
+                />
+                <div className={css.content}>
+                    {!isLoading && !isError && campers.length === 0 && (
+                        <NoCampers onClearFilters={handleClearFilters}/>
                     )}
-                    </>
-                )}
+
+                    {campers.length > 0 && (
+                        <>
+                        <CamperList campers={campers} />
+
+                        {hasMore && (
+                            <LoadMoreButton
+                            onClick={() => setPage(prev => prev + 1)}
+                            />
+                        )}
+                        </>
+                    )}
             </div>
+
+            </div>
+            
             
             
 
